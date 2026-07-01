@@ -85,21 +85,45 @@ export default function Home() {
 		(window as any).googletag = (window as any).googletag || { cmd: [] };
 		const googletag = (window as any).googletag;
 		let displaySlots = [];
+		let displayAdId = "/23334516659/h5_1";
 
 		googletag.cmd.push(function() {
 			try {
-				displaySlots[0] = googletag.defineSlot("/23334516659/h5_1", [[300, 250], [336, 280], [300, 600], [320, 480], [250, 250]], "div-gpt-ad-123456789-1").addService(googletag.pubads());
+				// displaySlots[0] = googletag.defineSlot("/23334516659/h5_1", [[300, 250], [336, 280], [300, 600], [320, 480], [250, 250]], "div-gpt-ad-123456789-1").addService(googletag.pubads());
 				
 
-				googletag.pubads().addEventListener('slotRenderEnded', (event: any) => {});
-				googletag.pubads().enableSingleRequest();
+				// googletag.pubads().addEventListener('slotRenderEnded', (event: any) => {});
+				// googletag.pubads().enableSingleRequest();
+				// googletag.pubads().collapseEmptyDivs();
+				// googletag.pubads().enableLazyLoad({
+				// 	fetchMarginPercent: 100,
+				// 	renderMarginPercent: 50,
+				// 	mobileScaling: 2.0
+				// });
+				// googletag.enableServices();
+
+
 				googletag.pubads().collapseEmptyDivs();
-				googletag.pubads().enableLazyLoad({
-					fetchMarginPercent: 100,
-					renderMarginPercent: 50,
-					mobileScaling: 2.0
-				});
 				googletag.enableServices();
+
+				// Define ad slots
+				const adSlots = {
+					'ad1': googletag.defineSlot(displayAdId, [[300, 250], [336, 280], [300, 600], [320, 480], [250, 250]], 'div-gpt-ad-123456789-1')
+						.addService(googletag.pubads())
+				};
+
+				// Display all slots
+				googletag.display('div-gpt-ad-123456789-1');
+
+				// Hide empty slots
+				googletag.pubads().addEventListener('slotRenderEnded', function (event: any) {
+					Object.entries(adSlots).forEach(([adId, slot]) => {
+						if (event.slot === slot && event.isEmpty) {
+							const adContainer = document.getElementById(adId);
+							if (adContainer) adContainer.classList.add('hidden');
+						}
+					});
+				});
 			} catch (error) {
 				console.error('Ad initialization error:', error);
 			}
