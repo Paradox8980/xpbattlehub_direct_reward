@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f172a;
+  --foreground: #6e6e6e;
+}
+
+body {
+  background-image: url(/bg.png);
+  color: var(--foreground);
+  backdrop-filter: blur(5px);
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.bg-main {
+  background-color: #baa6ff1c;
+}
+
+.fc-message-root {
+  display: flex !important;
+  height: 100% !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-dialog-overlay {
+  background-color: black !important;
+  height: 100% !important;
+  left: 0px !important;
+  opacity: 0.6 !important;
+  position: fixed !important;
+  top: 0px !important;
+  width: 100% !important;
+  z-index: -1 !important;
+}
+
+.fc-message-root .fc-monetization-dialog-container {
+  z-index: 2147483644 !important;
+  align-items: center !important;
+  display: flex !important;
+  height: 100% !important;
+  justify-content: center !important;
+  width: 100% !important;
+  left: 0px !important;
+  position: fixed !important;
+  top: 0px !important;
+}
+
+@media screen and (min-width: 480px) {
+  .fc-message-root .fc-monetization-dialog {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+}
+
+.fc-message-root .fc-monetization-dialog .fc-dialog-content {
+  align-items: center !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-monetization-dialog {
+  align-items: center !important;
+  border-radius: 8px !important;
+  max-width: 600px !important;
+  width: 90% !important;
+  background: #FFF;
+  padding: 32px 24px 24px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  max-height: 90% !important;
+  min-width: 200px !important;
+  position: relative !important;
+}
+
+.fc-message-root .fc-button,
+.fc-message-root .fc-dialog {
+  outline: transparent solid 1px !important;
+}
+
+.fc-message-root .fc-monetization-dialog .fc-dialog-content> :not(:last-child) {
+  margin-bottom: 30px !important;
+}
+
+.fc-message-root .fc-monetization-dialog .fc-dialog-content>* {
+  flex-shrink: 0 !important;
+}
+
+.fc-message-root .fc-header {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-header-image-container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+.logo-header {
+  font-size: 2rem;
+  color: #0f172a;
+  text-align: center;
+}
+
+.fc-message-root .fc-header {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-header-image {
+  max-height: 60px;
+  min-height: 40px !important;
+  object-fit: contain !important;
+}
+
+.fc-message-root .fc-dialog-headline {
+  align-items: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-dialog-headline> :not(:last-child) {
+  margin-bottom: 8px !important;
+}
+
+.fc-message-root .fc-dialog-headline-text {
+  overflow-wrap: break-word !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  text-decoration: initial !important;
+  text-align: center !important;
+  /*font-family: Poppins !important;*/
+  color: rgb(23, 25, 29) !important;
+  font-size: 1.25em !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-dialog-body {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.fc-message-root .fc-dialog-body-text {
+  line-height: 1.5em !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  overflow-wrap: break-word !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: initial !important;
+  text-align: center !important;
+  /*font-family: Roboto !important;*/
+  color: #5f5f5f !important;
+  font-size: 1em !important;
+}
+
+.fc-message-root .fc-list-container {
+  border: 1px solid rgba(107, 110, 118, 0.4) !important;
+  border-radius: 15px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  z-index: 1 !important;
+}
+
+.fc-message-root .fc-list-item-button {
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 16px !important;
+  position: relative !important;
+  width: 100% !important;
+  /* border: 1px solid #cd5aff; */
+  /* background: linear-gradient(45deg, #be6ae1, #723dc7); */
+  background-color: #FFF;
+  align-items: center;
+  border-radius: 15px !important;
+}
+
+.fc-message-root button,
+.fc-message-root button div,
+.fc-message-root button p,
+.fc-message-root .fc-button,
+.fc-message-root .fc-button div,
+.fc-message-root .fc-button p {
+  cursor: pointer !important;
+}
+
+.fc-message-root .fc-list-item-text-container {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  max-width: 88% !important;
+}
+
+.fc-message-root .fc-list-item-text-container> :not(:last-child) {
+  margin-bottom: 4px !important;
+}
+
+.fc-message-root .fc-list-item-text {
+  overflow-wrap: break-word !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  text-decoration: initial !important;
+  /*font-family: Poppins !important;*/
+  /* color: #FFF !important; */
+  color: #202124;
+  font-size: 14px !important;
+  text-align: start;
+}
+
+.fc-message-root .fc-list-item-subtext {
+  overflow-wrap: break-word !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: initial !important;
+  /*font-family: Roboto !important;*/
+  /* color: #ffffff91 !important; */
+  color: #5f6368;
+  font-size: 14px !important;
+}
+
+.fc-message-root .fc-list-item-image-container {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 24px !important;
+}
+
+.fc-message-root .fc-choice-icon svg {
+  /* fill: #ffffffb3 !important; */
+  fill: #174ea6 !important;
+  display: flex !important;
+  align-items: center !important;
+}
